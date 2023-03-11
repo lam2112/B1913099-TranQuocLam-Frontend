@@ -1,3 +1,4 @@
+// Chi tiết liên hệ // Nhận vào là 1 contact và in ra màn hình
 <script>
 export default {
   props: {
@@ -5,6 +6,7 @@ export default {
   },
 };
 </script>
+
 <template>
   <div>
     <div class="p-1">

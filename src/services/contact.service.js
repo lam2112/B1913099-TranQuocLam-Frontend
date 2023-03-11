@@ -1,5 +1,5 @@
 //định nghĩa các phương thức tương tác với dữ liệu phía API server
-// bằng cách gọi các lời gọi HTTP tương ứng
+// bằng cách gọi các lời gọi HTTP tương ứng.
 import createApiClient from "./api.service";
 class ContactService {
   constructor(baseUrl = "/api/contacts") {

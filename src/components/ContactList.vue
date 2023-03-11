@@ -1,5 +1,4 @@
-// activeIndex và phát sinh sự kiện update:activeIndex khi một phần tử // trong
-danh sách được nhấp chọn
+// activeIndex và phát sinh sự kiện update:activeIndex khi một phần tử trong danh sách được nhấp chọn
 <script>
 export default {
   props: {

@@ -1,3 +1,5 @@
+// Trang hiển thị nhập liệu. Nếu có id -> update và có nút xóa 1 liên hệ , tạo
+mới
 <template>
   <Form @submit="submitContact" :validation-schema="contactFormSchema">
     <div class="form-group">
@@ -64,6 +66,7 @@
     </div>
   </Form>
 </template>
+
 <script>
 import * as yup from "yup";
 import { Form, Field, ErrorMessage } from "vee-validate";
@@ -73,10 +76,14 @@ export default {
     Field,
     ErrorMessage,
   },
+
+  // Truyền xuống 1 contact và trả về 2 kiểu ["submit:contact", "delete:contact"]
   emits: ["submit:contact", "delete:contact"],
   props: {
     contact: { type: Object, required: true },
   },
+
+  // valid
   data() {
     const contactFormSchema = yup.object().shape({
       name: yup
@@ -96,6 +103,9 @@ export default {
           "Số điện thoại không hợp lệ."
         ),
     });
+
+    // Sử dụng các biến cục bộ trong khi tao tác làm dữ liệu an toàn hơn
+    // Gọi hàm valid
     return {
       // Chúng ta sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ
       // contactLocal để liên kết với các input trên form
@@ -103,6 +113,8 @@ export default {
       contactFormSchema,
     };
   },
+
+  // Lấy dữ liệu từ form
   methods: {
     submitContact() {
       this.$emit("submit:contact", this.contactLocal);
@@ -113,6 +125,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 @import "@/assets/form.css";
 </style>

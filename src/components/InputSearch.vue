@@ -1,4 +1,7 @@
 // Khi thông tin modelValue thay đổi sẽ kích hoạt hàm updateModelValue
+
+// modelValue: chuỗi search
+// Lắng nghe modelValue và tín hiệu submit
 <script>
 export default {
   props: {
@@ -15,6 +18,8 @@ export default {
   },
 };
 </script>
+
+
 <template>
   <div class="input-group">
     <input

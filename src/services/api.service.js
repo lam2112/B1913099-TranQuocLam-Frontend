@@ -1,4 +1,4 @@
-// Dinh dang nhung gi can gui cho Backend
+// Định dạng khung dữ liệu gửi cho backend
 import axios from "axios";
 const commonConfig = {
   headers: {
@@ -6,6 +6,8 @@ const commonConfig = {
     Accept: "application/json",
   },
 };
+
+// send link + header
 export default (baseURL) => {
   return axios.create({
     baseURL,

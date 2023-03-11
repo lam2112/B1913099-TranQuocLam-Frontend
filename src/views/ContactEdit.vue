@@ -1,11 +1,14 @@
 <template>
   <div v-if="contact" class="page">
     <h4>Hiệu chỉnh Liên hệ</h4>
+
+     <!-- cho phép update hoặc xóa -->
     <ContactForm
       :contact="contact"
       @submit:contact="updateContact"
       @delete:contact="deleteContact"
     />
+
     <p>{{ message }}</p>
   </div>
 </template>
@@ -27,6 +30,8 @@ export default {
     };
   },
   methods: {
+
+    // Láy thông tin 1 contact bằng id
     async getContact(id) {
       try {
         this.contact = await ContactService.get(id);
@@ -43,6 +48,7 @@ export default {
         });
       }
     },
+
     async updateContact(data) {
       try {
         await ContactService.update(this.contact._id, data);
