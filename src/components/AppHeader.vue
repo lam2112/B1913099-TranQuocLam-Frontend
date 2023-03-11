@@ -1,6 +1,6 @@
 // Thanh tiêu đề trên cùng
 <template>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-dark" @load="checkLogin">
     <a href="/" class="navbar-brand">Ứng dụng Quản lý danh bạ</a>
     <div class="mr-auto navbar-nav">
       <li class="nav-item">
@@ -12,3 +12,4 @@
     </div>
   </nav>
 </template>
+

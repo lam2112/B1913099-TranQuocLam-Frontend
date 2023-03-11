@@ -117,6 +117,7 @@ export default {
   // Lấy dữ liệu từ form
   methods: {
     submitContact() {
+      console.log(this.contactLocal)
       this.$emit("submit:contact", this.contactLocal);
     },
     deleteContact() {
