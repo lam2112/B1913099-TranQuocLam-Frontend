@@ -2,27 +2,27 @@
 <template>
   <div class="page">
     <h4>Đăng nhập</h4>
-    <LoginForm
-      :loginUser="loginUser"
-      @submit:loginUser="checkLogin"
+    <RegisterForm
+      :infoRegister="infoRegister"
+      @submit:infoRegister="register"
     />
     <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
-import LoginForm from "@/components/LoginForm.vue";
+import RegisterForm from "@/components/RegisterForm.vue";
 
 import UserService from "@/services/user.service.js";
 export default {
   components: {
-    LoginForm,
+    RegisterForm,
   },
 
 
   data() {
     return {
-      loginUser: {
+      infoRegister: {
         userName:"",
         password:"",
       },
@@ -30,10 +30,9 @@ export default {
     };
   },
   methods: {
-    async checkLogin(data) {
+    async register(data) {
       try {
-        const res = await UserService.login(data);
-        window.localStorage.setItem("key", res._id)
+        const res = await UserService.register(data);
 
       } catch (error) {
         console.log(error);
